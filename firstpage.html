@@ -1,0 +1,653 @@
+	<!doctype html>
+	<html lang="en">
+	 <head>
+		<meta charset="UTF-8">
+		<title>Document</title>
+		<style>
+	/*首先设置一个大的div，里面放所有的头部内容，包括图片和顶端文字；
+	顶端文字分为三个部分：①meizu图标 ②导航栏9个a标签 ③一个input标签，一个用户图标，一个购物车图标*/
+		</style>
+		<link rel="stylesheet" href="css/firstpage.css">
+		<script type="text/javascript">
+			function mouseOver(){
+				document.getElementById("unlogin_ul").style.display="block";
+				document.getElementById("meizu_header_user_box").style.display="block";
+			}
+			function mouseOut(){
+				document.getElementById("unlogin_ul").style.display="none";
+				document.getElementById("meizu_header_user_box").style.display="none";
+			}
+			//导航栏手机的下拉菜单
+			function meizu_header_link_phone(){
+				document.getElementById("meizu_header_sub_wrap_ul_1").style.display="block";
+			}
+			//隐藏ul还有一些问题
+			function meizu_header_sub_wrap1(){
+				document.getElementById("meizu_header_sub_wrap_ul_1").style.display="none";
+			}
+			//声学下拉菜单
+			function meizu_header_link_voice(){
+				document.getElementById("meizu_header_sub_wrap_ul_2").style.display="block";
+			}
+			function meizu_header_sub_wrap_voice(){
+				document.getElementById("meizu_header_sub_wrap_ul_2").style.display="none";
+				document.getElementById("meizu_header_sub_wrap_ul_1").style.display="none";
+			}
+		</script>	
+	 </head>
+	 <body><!-- -->
+		<!--1F 整个头部，包括背景图片 根据轮播图的不同，改变导航栏的颜色，分为white和gray两种 -->
+		<div class="container_theme_white">
+			<!--下面是轮播图图片，移到导航栏的后面，有一个div包着很多个div，这很多个div里面都是图片 -->
+			<div class="meizu_header_transform">
+					<img src="img/firstpage/firstpage1_1.jpg" alt="" id="background_img">
+			</div>
+			<!--下面包括整个头部 包括导航栏以及轮播图这个div是设置absolute 相对于父级元素绝对定位-->
+			<div class="meizu_header_container">
+				<!--上面包括导航栏那一整行以及未显示出来的四个手机 声学 配件 生活下拉列表 -->
+				<div class="meizu_header">
+					<!--下面是轮播图图片，移到导航栏的后面，有一个div包着很多个div，这很多个div里面都是图片 
+					<img src="img/firstpage/firstpage1_1.jpg" alt="" id="background_img">-->
+					<div class="meizu_header_wrap_1240"><!--在:before防止外边距溢出 ::after设置一个空的table，防止高度坍塌 -->
+						<!--::before -->
+						<!--meizu图标 -->
+						<div class="meizu_header_logo">
+							<a href="#" class="meizu_header_logo_img">
+							<!-- 	<img src="img/firstpage/meizu.png"> -->
+							</a>
+						</div>
+						<!--右浮动 购物车图标 -->
+						<a href="#" class="meizu_header_item_cart" id="meizu_header_cart">
+							<em>0</em>
+						</a>
+						<!-- 右浮动 用户图标 -->
+						<div class="meizu_header_item_user" id="meizu_header_user">
+							<div class="meizu_header_user_img">
+								<img src="img/firstpage/icon-default-user_white.png" alt="" onmouseover="mouseOver()">
+							</div>
+							<!-- 用户图标的下拉框 在用户尚未登录和登录之后下拉菜单显示不一样-->
+							<!-- 设置下拉菜单的上面的三角形，白底的 -->
+							
+							<!-- 已登录 -->
+							<div class="meizu_header_user_trigger" id="unlogin"  >
+								<!-- <div class="meizu_header_user_box" id="meizu_header_user_box" ></div> -->
+								<ul class="meizu_header_user_dropdown" id="unlogin_ul" onmouseout="mouseOut()">
+									<li><a href="#">立即登录</a></li>
+									<li><a href="#">立即注册</a></li>
+									<li><a href="#">我的订单</a></li>
+									<li><a href="#">M码通道</a></li>
+								</ul>
+							</div>
+							<!-- 未登录 -->
+							<div class="meizu_header_user_trigger" id="islogin">
+								<ul class="meizu_header_user_dropdown" id="islogin_ul">
+									<li><a href="#">个人中心</a></li>
+									<li><a href="#">我的订单</a></li>
+									<li><a href="#">M码通道</a></li>
+									<li><a href="#">退出登录</a></li>
+								</ul>
+							</div>
+						</div>
+						<!--右浮动 魅族16s搜索框 -->
+						<div class="meizu_header_item_search" id="meizu_header_search">
+							<input type="text" placeholder="魅族16s">
+							<a href="#" class="meizu_header_icon_search"></a>
+						</div>
+						<!--右浮动 导航栏9个 -->
+						<div class="meizu_header_link_div">
+							<ul class="meizu_header_link" id="meizu_header_link">
+								<!-- a标签中调用meizu_header_link_phone()函数，鼠标悬停，出现下拉菜单 -->
+								<li id="meizu_header_link_product_hd1" class="meizu_header_link_product">
+									<a href="#" class="meizu_header_link_product_a" onmouseover="meizu_header_link_phone()">手机</a>
+								</li>
+								<li id="meizu_header_link_product_hd2" class="meizu_header_link_product">
+									<a href="#" class="meizu_header_link_product_a" onmouseover="meizu_header_link_voice()">声学</a>
+								</li>
+								<li id="meizu_header_link_product_hd3" class="meizu_header_link_product">
+									<a href="#" class="meizu_header_link_product_a">配件</a>
+								</li>
+								<li id="meizu_header_link_product_hd4" class="meizu_header_link_product">
+									<a href="#" class="meizu_header_link_product_a">生活</a>
+								</li>
+								<li>
+									<a href="#">Flyme</a>
+								</li>
+								<li>
+									<a href="#">服务</a>
+								</li>
+								<li>
+									<a href="#">专卖店</a>
+								</li>
+								<li>
+									<a href="#">社区</a>
+								</li>
+								<li>
+									<a href="#">APP下载</a>
+								</li>
+							</ul>
+						</div>
+						<!--::after -->
+					</div>
+				</div>
+				<div id="meizu_header_sub_hd1" class="meizu_header_sub">
+					<!--1手机导航栏的下拉菜单-->
+					<div class="meizu_header_sub_wrap">
+						<ul class="meizu_header_sub_wrap_ul_1" id="meizu_header_sub_wrap_ul_1" onmouseout="meizu_header_sub_wrap1()" >
+							<li>
+								<a href="#" class="meizu_header_link_product_sub_1">
+									<div>
+										<!-- <img src="img/firstpage/header_link_a1.png" alt=""> -->
+									</div>
+									<p>魅族 16s</p>
+									<p>￥3198</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="meizu_header_link_product_sub_1">
+									<div>
+										<!-- <img src="img/firstpage/header_link_a1.png" alt=""> -->
+									</div>
+									<p>魅族 Node9</p>
+									<p>￥2298</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="meizu_header_link_product_sub_1">
+									<div>
+										<!-- <img src="img/firstpage/header_link_a1.png" alt=""> -->
+									</div>
+									<p>魅族 16X</p>
+									<p>￥1798</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="meizu_header_link_product_sub_1">
+									<div>
+										<!-- <img src="img/firstpage/header_link_a1.png" alt=""> -->
+									</div>
+									<p>魅族 X8</p>
+									<p>￥1298</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="meizu_header_link_product_sub_1">
+									<div>
+										<!-- <img src="img/firstpage/header_link_a1.png" alt=""> -->
+									</div>
+									<p>魅族 15</p>
+									<p>￥1498</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="meizu_header_link_product_sub_1">
+									<div>
+										<!-- <img src="img/firstpage/header_link_a1.png" alt=""> -->
+									</div>
+									<p>魅族 Node8</p>
+									<p>￥999</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="meizu_header_link_product_sub_1">
+									<div>
+										<!-- <img src="img/firstpage/header_link_a1.png" alt=""> -->
+									</div>
+									<p>魅族16s</p>
+									<p>￥3198</p>
+								</a>
+							</li>
+							<!-- <li>
+								<a href="#" class="meizu_header_link_product_sub_1">
+									<div></div>
+									<p>魅族 16th</p>
+									<p>￥2298</p>
+								</a>
+							</li> -->
+						</ul>
+					</div>	
+				</div>
+				<div id="meizu_header_sub_hd2" class="meizu_header_sub">
+					<!--2声学导航栏的下拉菜单-->
+					<div class="meizu_header_sub_wrap">
+						<ul class="meizu_header_sub_wrap_ul_2" id="meizu_header_sub_wrap_ul_2" onmouseout="meizu_header_sub_wrap_voice()">
+							<li>
+								<a href="#" class="meizu_header_link_product_sub_1">
+									<div id="meizu_header_link_product_voice_1">
+										<!-- <img src="img/firstpage/header_link_a1.png" alt=""> -->
+									</div>
+									<p>魅族POP2真无线蓝牙</p>
+									<p>￥399</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="meizu_header_link_product_sub_1">
+									<div id="meizu_header_link_product_voice_2">
+										<!-- <img src="img/firstpage/header_link_a1.png" alt=""> -->
+									</div>
+									<p>魅族POP2真无线蓝牙</p>
+									<p>￥399</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="meizu_header_link_product_sub_1">
+									<div id="meizu_header_link_product_voice_3">
+										<!-- <img src="img/firstpage/header_link_a1.png" alt=""> -->
+									</div>
+									<p>魅族POP2真无线蓝牙</p>
+									<p>￥399</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="meizu_header_link_product_sub_1">
+									<div id="meizu_header_link_product_voice_4">
+										<!-- <img src="img/firstpage/header_link_a1.png" alt=""> -->
+									</div>
+									<p>魅族POP2真无线蓝牙</p>
+									<p>￥399</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="meizu_header_link_product_sub_1">
+									<div id="meizu_header_link_product_voice_5">
+										<!-- <img src="img/firstpage/header_link_a1.png" alt=""> -->
+									</div>
+									<p>魅族POP2真无线蓝牙</p>
+									<p>￥399</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="meizu_header_link_product_sub_1">
+									<div id="meizu_header_link_product_voice_6">
+										<!-- <img src="img/firstpage/header_link_a1.png" alt=""> -->
+									</div>
+									<p>魅族POP2真无线蓝牙</p>
+									<p>￥399</p>
+								</a>
+							</li>
+							<li>
+								<a href="#" class="meizu_header_link_product_sub_1">
+									<div id="meizu_header_link_product_voice_7">
+										<!-- <img src="img/firstpage/header_link_a1.png" alt=""> -->
+									</div>
+									<p>魅族POP2真无线蓝牙</p>
+									<p>￥399</p>
+								</a>
+							</li>
+							<!-- <li>
+								<a href="#" class="meizu_header_link_product_sub_1">
+									<div id="meizu_header_link_product_voice_8"></div>
+									<p>魅族POP2真无线蓝牙</p>
+									<p>￥399</p>
+								</a>
+							</li> -->
+						</ul>
+				</div>
+				<div id="meizu_header_sub_hd3" class="meizu_header_sub">
+					<!--3配件导航栏的下拉菜单-->
+				</div>
+				<div id="meizu_header_sub_hd4" class="meizu_header_sub">
+					<!--4生活导航栏的下拉菜单-->
+				</div>
+			</div>
+			<div class="meizu_index_banner">
+				<!--轮播图 -->
+			</div>
+			<!-- 轮播图上的一排小白圆圈 -->
+			<div class="meizu_header_nav">
+				<span class="meizu_header_nav_circle_1"></span>
+				<span class="meizu_header_nav_circle_1"></span>
+				<span class="meizu_header_nav_circle_1"></span>
+				<span class="meizu_header_nav_circle_1"></span>
+				<span class="meizu_header_nav_circle_1"></span>
+				<span class="meizu_header_nav_circle_1"></span>
+				<span class="meizu_header_nav_circle_1"></span>
+				<span class="meizu_header_nav_circle_1"></span>
+			</div>
+		</div>
+			<!--2F 中间的一层 推荐购买魅族s6-->
+			<div class="section-box-adv">
+				<ul class="index_adv_ul">
+					<li class="box_adv1">
+						<a href="#" class="box_adv1_a">
+							<img src="img/firstpage/adv_icon1.png" class="adv_img">
+							<p class="adv_p1">周四福利社</p>
+							<p class="adv_p2">进入领取</p>
+						</a>
+					</li>
+					<li class="box_adv1">
+						<a href="#" class="box_adv2_a">
+							<img src="img/firstpage/adv_icon2.png" class="adv_img">
+							<p class="adv_p1">魅族16s</p>
+							<p class="adv_p2">立即购买</p>
+						</a>
+					</li>
+					<li class="box_adv1">
+						<a href="#" class="box_adv3_a">
+							<img src="img/firstpage/adv_icon3.png" class="adv_img">
+							<p  class="adv_p1">魅族Node9</p>
+							<p class="adv_p2">立即购买</p>
+						</a>
+					</li>
+					<li class="box_adv1">
+						<a href="#" class="box_adv4_a">
+							<img src="img/firstpage/adv_icon4.png" class="adv_img">
+							<p class="adv_p1">以旧换新</p>
+							<p class="adv_p2">免费寄件 专业检测</p>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!--3F 魅族手机模块  -->
+			<div class="index_phone_center">
+				<!-- 	1.魅族手机标签		 -->
+				<div class="section_title" id="section_title_phone">
+					<h3>魅族手机</h3>
+				</div>
+				<!--  2.一整个图片作为a标签-->
+				<div class="section_box_adv_2" >
+					<!-- 将海报设置为a标签的背景图 -->
+					<a href="#" id="section_box_adv_phone"></a>
+				</div>
+				<!--  3.列表,分区展示各个手机-->
+				<div class="section_box_row">
+				<!--  3.1首先用一个div内部用ul列表进行布局-->
+					<div class="index_center">
+						<ul class="clearfix">
+							<li class="big_big1">
+								<!-- 					列表中用div包着整个a标签，div>a>img+p+p+p		 -->
+								<div class="section_box_adv1">
+									<a href="#" class="section_box_adv3_a">
+										
+										<div class="good_detail">
+											<div class="good_name1">魅族 16s</div>
+											<div class="good_desc1">骁龙855 4800w光学防抖</div>
+											<div class="good_price1">￥3198</div>
+										</div>
+										<div class="product_sign_red">新品</div>
+										<!-- <div class="product_sign_img1"></div> -->
+										<img src="img/firstpage/firstpage_list1_1.png" class="box_img1">
+									</a>
+								</div>
+							</li>
+							<li class="big_big1">
+								<!-- 					列表中用div包着整个a标签，div>a>img+p+p+p		 -->
+								<div class="section_box_adv1">
+									<a href="#" class="section_box_adv3_a">
+										<div class="good_detail">
+											<div class="good_name1">魅族 Note9</div>
+											<div class="good_desc1">吃鸡不卡 拍她更美|骁龙675 后置4800万</div>
+											<div class="good_price1">￥1398</div>
+										</div>
+										<div class="product_sign_red">新品</div>
+										<!-- <div class="product_sign_img1"></div> -->
+										<img src="img/firstpage/firstpage_list1_2.png" class="box_img1">
+									</a>
+								</div>
+							</li>
+							<li class="phone3">
+								<!-- 					列表中用div包着整个a标签，div>a>img+p+p+p		 -->
+								<div class="section_box_adv2">
+									<a href="#" class="section_box_adv3_a">
+										<img src="img/firstpage/firstpage_list1_2.png" class="box_img2">
+										<div class="good_detai2">
+											<div class="good_name2">魅族 16th Plus</div>
+											<div class="good_desc2">骁龙845 屏幕下指纹</div>
+											<div class="good_price2">￥2698</div>
+										</div>
+									</a>
+								</div>
+							</li>
+							<li class="phone4">
+								<!-- 列表中用div包着整个a标签，div>a>img+p+p+p		 -->
+								<div class="section_box_adv2">
+									<a href="#" class="section_box_adv3_a">
+										<img src="img/firstpage/firstpage_list1_1.png" class="box_img2">
+										<div class="good_detai2">
+											<div class="good_name2">魅族 X8</div>
+											<div class="good_desc2">人脸指纹双解锁 旗舰双摄</div>
+											<div class="good_price2">￥1298</div>
+										</div>
+									</a>
+								</div>
+							</li>
+							<li class="phone5">
+								<!-- 列表中用div包着整个a标签，div>a>img+p+p+p		 -->
+								<div class="section_box_adv2">
+									<a href="#" class="section_box_adv3_a">
+										<img src="img/firstpage/firstpage_list1_1.png" class="box_img2">
+										<div class="good_detai2">
+											<div class="good_name2">魅族 16X</div>
+											<div class="good_desc2">高通骁龙710 屏幕下指纹 旗舰双摄</div>
+											<div class="good_price2">￥1798</div>
+										</div>
+									</a>
+								</div>
+							</li>
+							<li class="phone6">
+								<!--列表中用div包着整个a标签，div>a>img+p+p+p		 -->
+								<div class="section_box_adv2">
+									<a href="#" class="section_box_adv3_a">
+										<img src="img/firstpage/firstpage_list1_1.png" class="box_img2">
+										<div class="good_detai2">
+											<div class="good_name2">魅族 Note8</div>
+											<div class="good_desc2">全像素双核对焦 大电池长续航</div>
+											<div class="good_price2">￥999</div>
+										</div>
+									</a>
+								</div>
+							</li>
+							<li class="phone7">
+								<!-- 列表中用div包着整个a标签，div>a>img+p+p+p		 -->
+								<div class="section_box_adv2">
+									<a href="#" class="section_box_adv3_a">
+										<img src="img/firstpage/firstpage_list1_1.png" class="box_img2">
+										<div class="good_detai2">
+											<div class="good_name2">魅族 V8 高配版</div>
+											<div class="good_desc2">1200万+500万高清双摄</div>
+											<div class="good_price2">￥898</div>
+										</div>
+									</a>
+								</div>
+							</li>
+							<li class="phone8">
+								<div class="section_box_adv2">
+									<a href="#" class="section_box_adv3_a">
+										<img src="img/firstpage/firstpage_list1_1.png" class="box_img2">
+										<div class="good_detai2">
+											<div class="good_name2">魅族 15</div>
+											<div class="good_desc2">骁龙660 2000万暗光双摄</div>
+											<div class="good_price2">￥1498</div>
+										</div>
+									</a>
+								</div>
+							</li>
+							<li class="phone9">
+								<div class="section_box_adv2">
+									<a href="#" class="section_box_adv3_a">
+										<img src="img/firstpage/firstpage_list1_1.png" class="box_img2">
+										<div class="good_detai2">
+											<div class="good_name2">魅族 16th</div>
+											<div class="good_desc2">骁龙845 屏幕下指纹</div>
+											<div class="good_price2">￥2299</div>
+										</div>
+									</a>
+								</div>
+							</li>
+							<li class="phone10">
+								<div class="section_box_adv2">
+									<a href="#" class="section_box_adv3_a">
+										<img src="img/firstpage/firstpage_list1_1.png" class="box_img2">
+										<div class="good_detai2">
+											<div class="good_name2">魅族 15 Plus</div>
+											<div class="good_desc2">8895处理器 2000万暗光双摄</div>
+											<div class="good_price2">￥1798</div>
+										</div>
+									</a>
+								</div>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<!--4F 魅族声学模块 -->
+			<div class="index_voice_center">
+				<div class="section_title">
+					<h3>魅族声学</h3>
+				</div>
+				<div class="section_box_adv_2" >
+					<a href="#" id="section_box_adv_voice" >
+						<!-- <img src="img/firstpage/list2_1_1.jpg" id="section_box_adv2_img1"> -->
+					</a>
+				</div>
+				<!--下面3排*4列列表 -->
+				<div class="index_voice">
+					<ul class="voicefix">
+						<li class="voice1">
+							<div class="index_voice_li1">
+								<a href="">
+									<img src="img/firstpage/voice_list1.jpg" alt="" class="voice_set_img1">
+									<div>
+										<div class="voice_name1">魅族 POP2 真无线蓝牙耳机</div>
+										<div class="voice_desc1">蓝牙5.0 超长续航</div>
+										<div class="voice_price1">￥399</div>
+									</div>
+								</a>
+							</div>
+						</li>
+						<li class="voice1">
+							<div class="index_voice_li1">
+								<a href="">
+									<img src="img/firstpage/voice_list1.jpg" alt="" class="voice_set_img1">
+									<div>
+										<div class="voice_name1">魅族 POP2 真无线蓝牙耳机</div>
+										<div class="voice_desc1">蓝牙5.0 超长续航</div>
+										<div class="voice_price1">￥399</div>
+									</div>
+								</a>
+							</div>
+						</li>
+						<li class="voice1">
+							<div class="index_voice_li1">
+								<a href="">
+									<img src="img/firstpage/voice_list1.jpg" alt="" class="voice_set_img1">
+									<div>
+										<div class="voice_name1">魅族 POP2 真无线蓝牙耳机</div>
+										<div class="voice_desc1">蓝牙5.0 超长续航</div>
+										<div class="voice_price1">￥399</div>
+									</div>
+								</a>
+							</div>
+						</li>
+						<li class="voice1">
+							<div class="index_voice_li1">
+								<a href="">
+									<img src="img/firstpage/voice_list1.jpg" alt="" class="voice_set_img1">
+									<div>
+										<div class="voice_name1">魅族 POP2 真无线蓝牙耳机</div>
+										<div class="voice_desc1">蓝牙5.0 超长续航</div>
+										<div class="voice_price1">￥399</div>
+									</div>
+								</a>
+							</div>
+						</li>
+						<li class="voice1">
+							<div class="index_voice_li1">
+								<a href="">
+									<img src="img/firstpage/voice_list1.jpg" alt="" class="voice_set_img1">
+									<div>
+										<div class="voice_name1">魅族 POP2 真无线蓝牙耳机</div>
+										<div class="voice_desc1">蓝牙5.0 超长续航</div>
+										<div class="voice_price1">￥399</div>
+									</div>
+								</a>
+							</div>
+						</li>
+						<li class="voice1">
+							<div class="index_voice_li1">
+								<a href="">
+									<img src="img/firstpage/voice_list1.jpg" alt="" class="voice_set_img1">
+									<div>
+										<div class="voice_name1">魅族 POP2 真无线蓝牙耳机</div>
+										<div class="voice_desc1">蓝牙5.0 超长续航</div>
+										<div class="voice_price1">￥399</div>
+									</div>
+								</a>
+							</div>
+						</li>
+						<li class="voice1">
+							<div class="index_voice_li1">
+								<a href="">
+									<img src="img/firstpage/voice_list1.jpg" alt="" class="voice_set_img1">
+									<div>
+										<div class="voice_name1">魅族 POP2 真无线蓝牙耳机</div>
+										<div class="voice_desc1">蓝牙5.0 超长续航</div>
+										<div class="voice_price1">￥399</div>
+									</div>
+								</a>
+							</div>
+						</li>
+						<li class="voice1">
+							<div class="index_voice_li1">
+								<a href="">
+									<img src="img/firstpage/voice_list1.jpg" alt="" class="voice_set_img1">
+									<div>
+										<div class="voice_name1">魅族 POP2 真无线蓝牙耳机</div>
+										<div class="voice_desc1">蓝牙5.0 超长续航</div>
+										<div class="voice_price1">￥399</div>
+									</div>
+								</a>
+							</div>
+						</li>
+						<li class="voice1">
+							<div class="index_voice_li1">
+								<a href="">
+									<img src="img/firstpage/voice_list1.jpg" alt="" class="voice_set_img1">
+									<div>
+										<div class="voice_name1">魅族 POP2 真无线蓝牙耳机</div>
+										<div class="voice_desc1">蓝牙5.0 超长续航</div>
+										<div class="voice_price1">￥399</div>
+									</div>
+								</a>
+							</div>
+						</li>
+						<li class="voice1">
+							<div class="index_voice_li1">
+								<a href="">
+									<img src="img/firstpage/voice_list1.jpg" alt="" class="voice_set_img1">
+									<div>
+										<div class="voice_name1">魅族 POP2 真无线蓝牙耳机</div>
+										<div class="voice_desc1">蓝牙5.0 超长续航</div>
+										<div class="voice_price1">￥399</div>
+									</div>
+								</a>
+							</div>
+						</li>
+						<li class="voice1">
+							<div class="index_voice_li1">
+								<a href="">
+									<img src="img/firstpage/voice_list1.jpg" alt="" class="voice_set_img1">
+									<div>
+										<div class="voice_name1">魅族 POP2 真无线蓝牙耳机</div>
+										<div class="voice_desc1">蓝牙5.0 超长续航</div>
+										<div class="voice_price1">￥399</div>
+									</div>
+								</a>
+							</div>
+						</li>
+						<li class="voice1">
+							<div class="index_voice_li1">
+								<a href="">
+									<img src="img/firstpage/voice_list1.jpg" alt="" class="voice_set_img1">
+									<div>
+										<div class="voice_name1">魅族 POP2 真无线蓝牙耳机</div>
+										<div class="voice_desc1">蓝牙5.0 超长续航</div>
+										<div class="voice_price1">￥399</div>
+									</div>
+								</a>
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+	 </body>
+	</html>
