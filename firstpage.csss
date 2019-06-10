@@ -1,0 +1,510 @@
+*{padding:0;margin:0;}
+body{
+	/* min-width:1024px; */
+	font:14px/1.5;
+	color:#515151;
+	background:#f5f5f5;
+}
+a{
+	text-decoration:none;
+}
+ul,li{
+	list-style:none;
+}
+div.container_theme_white{
+	width:1240px;
+	height:670px;
+	/* border:1px solid #f00; */
+	margin:0 auto;
+}
+div.meizu_header_container{
+	margin:0 auto;
+	width:1240px;height:670px;
+	position:absolute;
+	top:0px;
+}
+div.meizu_header_transform{
+	width:1240px;
+	height:670px;
+	text-align:center;
+}
+/* 轮播图图片 */
+#background_img{
+	width:1240px;height:670px;
+	/* margin-left:-676px; */
+	min-width:1024px;
+}
+/* 这是上面一排导航栏 */
+div.meizu_header{
+	position:relative;
+	font-size:14px;
+}
+.meizu_header>div.meizu_header_wrap_1240{
+	position:relative;
+	margin:0 auto;
+}
+div.meizu_header_wrap_1240>div.meizu_header_logo{
+	float:left;
+	margin-left:50px;
+	padding:28px 0;
+}
+a.meizu_header_logo_img{
+	display:block;
+	width:125px;
+	height:24px;
+	background-image:url("../img/firstpage/meizu.png");
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:100% 100%; 	
+}
+/* 购物图标 */
+a.meizu_header_item_cart{
+	float:right;
+	display:block;
+	width:29px;
+	height:29px;
+	margin:27px 50px 0 8px;
+ 	background-image:url("../img/firstpage/shopping-cart-white.png");
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:100% 100%; 
+	position:relative;
+}
+.meizu_header_item_cart>em{
+	font-style:normal;
+	position:absolute;
+	right:-3px;
+	top:-2px;
+	display:inline-block;
+	width:15px;height:15px;
+	background:#c00;
+	border-radius:50%;
+	text-align:center;
+	line-height:15px;
+	color:#fff;
+	padding:0 1px;
+}
+div.meizu_header_item_user{
+	position:relative;
+}
+div.meizu_header_user_img{
+	float:right;
+	width:29px;height:29px;
+	margin-top:27px;
+	margin-right:15px;
+}
+.meizu_header_user_img img{
+	width:29px;height:29px;
+	cursor:pointer;
+}
+/* div.meizu_header_user_box{
+	position:absolute;
+	top:63px;right:86px;
+	width:60px;height:78px;
+	background:#fff;
+} */
+/* 这就是下拉菜单上面的小三角形 */
+div.meizu_header_user_box{
+	width:0px;
+	border:8px solid #fff;
+	border-top-color:transparent;
+	border-right-color:transparent;
+	border-left-color:transparent;
+	float:right;
+	margin-top:48px;
+	margin-right:-22px;
+	display:none;
+}
+div.meizu_header_user_trigger{
+	
+}
+/* 下拉菜单的ul */
+ul.meizu_header_user_dropdown{
+	width:98px;height:130px;
+	position:absolute;
+	top:64px;
+	right:68px;
+	border-radius:2px;
+	background:#fff;
+	text-align:center;
+	line-height:32.5px;
+	/* z-index:1; */
+	display:none;
+	
+}
+/* .meizu_header_user_img>img:hover+#unlogin{
+	display:block;
+}*/
+div.meizu_header_item_search{
+	position:relative;
+	float:right;
+	margin:26px 30px 0 10px;
+	width:170px;height:30px;
+	background:#fff;
+	border-radius:20px;
+	text-align:center;
+	line-height:30px;
+}
+div.meizu_header_item_search>input{
+	display:block;
+	width:127px;height:20px;
+	margin:5px 0 0 15px;
+	background:transparent;
+	border:0;
+	/* 设置获取焦点后外边框没有蓝色的线，默认是有一圈蓝色的线 */
+	outline:0;
+	font-size:12px;
+}
+/* 搜索小图标 */
+a.meizu_header_icon_search{
+	position:absolute;
+	top:0px;right:0px;
+	display:block;
+	width:23px;height:23px;
+	background-image:url("../img/firstpage/search.png");
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+	margin:3px 5px 0 14px;
+}
+/* 包着ul的div */
+div.meizu_header_link_div{
+	float:right;
+	margin-right:18px;
+	
+}
+ul.meizu_header_link{
+	width:484.14px;height:82px;
+	display:flex;
+	flex-flow:row nowrap;
+	justify-content:space-around;/*设置交叉轴对齐方式*/
+	/* line-height:82px;也可以使文字垂直对齐 */
+	/* margin-right:100px; 无效*/
+	align-items:center;
+}
+ul.meizu_header_link>li>a{
+	color:#fff;/*在ul和div里面设置a标签里的字体颜色无效*/
+	font-size:14px;
+
+}
+div.meizu_header_sub_wrap{
+	float:left;
+	margin-top:0px;
+	margin-left:0px;
+}
+/* 手机的下拉菜单，现在是隐藏的 */
+ul.meizu_header_sub_wrap_ul_1{
+	width:1240px;
+	height:191px;
+	display:flex;
+	justify-content:space-around;
+	align-items:center;
+	flex-wrap:nowarp;
+	text-align:center;
+	background:#fff;
+	/**/ display:none;
+}
+/*鼠标悬停在手机a标签上，出现下拉菜单 此处还有问题
+a.meizu_header_link_product_a:hover div.meizu_header_sub_wrap>ul{
+	display:block;
+}*/
+div.meizu_header_sub_wrap>ul>li{
+	display:inline-block;
+	width:142px;height:140px;
+	padding:15px 5px 20px;
+
+}
+div.meizu_header_sub_wrap>ul>li a{
+	display:block;
+	width:142px;
+	font-size:12px;
+	color:#333;
+}
+/* 第一个ul中的div，设置背景图片 */
+.meizu_header_link_product_sub_1>div{
+	width:120px;height:120px;
+	background-image:url(../img/firstpage/header_link_a1.png);
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+}
+.meizu_header_link_product_sub_1>p{
+	color:#333;
+}
+/* 声学的下拉菜单，现在是隐藏的 */
+ul.meizu_header_sub_wrap_ul_2{
+	width:1240px;
+	height:191px;
+	display:flex;
+	justify-content:space-around;
+	align-items:center;
+	flex-wrap:nowarp;
+	text-align:center;
+	/**/display:none; 
+	background:#fff;
+
+}
+#meizu_header_sub_wrap_ul{
+	display:block;
+}
+#meizu_header_link_product_voice_1{
+	background-image:url(../img/firstpage/header_link_voice_1.png);
+}
+#meizu_header_link_product_voice_2{
+	background-image:url(../img/firstpage/header_link_voice_2.png);
+}
+#meizu_header_link_product_voice_3{
+	background-image:url(../img/firstpage/header_link_voice_3.png);
+}
+#meizu_header_link_product_voice_4{
+	background-image:url(../img/firstpage/header_link_voice_4.png);
+}
+#meizu_header_link_product_voice_5{
+	background-image:url(../img/firstpage/header_link_voice_5.png);
+}
+#meizu_header_link_product_voice_6{
+	background-image:url(../img/firstpage/header_link_voice_6.png);
+}
+#meizu_header_link_product_voice_7{
+	background-image:url(../img/firstpage/header_link_voice_7.png);
+}
+#meizu_header_link_product_voice_8{
+	background-image:url(../img/firstpage/header_link_voice_8.png);
+}
+/* 轮播图上的一排小白圆圈 */
+div.meizu_header_nav{
+	position:absolute;
+	bottom:20px;
+	left:370px;
+	width:500px;height:20px;
+	text-align:center;
+	line-height:20px;
+}
+span.meizu_header_nav_circle_1{
+	display:inline-block;
+	width:8px;height:8px;
+	border-radius:50%;
+	background:#fff;
+	margin:5px 7px;
+}
+
+/* 第二楼 推荐购买魅族S6 */
+.section-box-adv{
+	width:1240px;height:278px;
+	color:#515151;
+	font:14px Helvetica;
+	position:relative;
+	/*	border:1px solid #000;*/
+	margin:0 auto;
+}
+ul.index_adv_ul{
+	width:1240px;height:278px;
+	list-style:none;
+	display:flex;
+	justify-content:space-around;
+	background:#fff;
+	/*	border:1px solid #000;*/
+	
+}
+li.box_adv1{
+	/*	flex-flow:row nowrap;*/
+	list-style:none;
+	width:310px;height:187px;
+	/*	border:1px solid #000;*/
+	position:relative;
+	margin:45px 0;
+
+}
+a.box_adv1_a{
+	text-decoration:none;
+}
+img.adv_img{
+	width:130px;height:130px;
+	position:absolute;
+	top:0px;right:84px;
+}
+p.adv_p1{
+	width:310px;height:30px;
+	font-size:20px;
+	color:#333;
+	position:absolute;
+	top:128px;left:0px;
+	text-align:center;
+}
+p.adv_p2{
+	width:310px;height:21px;
+	font-size:14px;
+	color:#999;
+	position:absolute;
+	top:155px;left:0px;
+	text-align:center;
+}
+/*整个中间魅族手机模块*/
+div.index_phone_center{
+	width:1240px;
+	height:1896px;
+	/* 	border:1px solid #000; */
+	margin:0 auto;
+}
+/*魅族手机标题*/
+div.section_title{
+	width:1240px;height:45px;
+	font-size:30px;
+	text-align:center;
+	margin-top:20px;
+	margin-bottom:10px;
+	/* 	border:1px solid #000; */
+}
+#section_title_phone{
+	margin-top:30px;
+}
+h3{
+	font-size:1em;
+	font-weight:400px;
+	font-style:normal;
+}
+/*整个div>a>img 魅族手机标题下的图片*/
+#section_box_adv_phone{
+	background-image:url(../img/firstpage/firstpage_list1.jpg);
+}
+div.section_box_adv_2>a{
+	display:block;
+	width:1240px;height:450px;
+	background-position:center center;
+	background-size:100% 100%;
+	background-repeat:no-repeat;
+
+	/* 	border:1px solid #000; */
+}
+
+/* #section_box_adv2_img{
+	width:1240px;height:450px;
+	margin:0 auto;
+} */
+
+/*ul手机列表，共10个，上面2个大一点，底下2排每排4个*/
+ul.clearfix{
+	list-style:none;
+	width:1240px;height:1390px;
+	display:flex;/*设置弹性布局*/
+	flex-flow:row wrap;/*设置空间不够就换行*/
+	justify-content:space-between;
+	/* background:#fff; */
+	/* 	border:1px solid #f00; */
+}
+ul.clearfix>li{
+	background:#fff;
+}
+li.big_big1{
+	width:615px;height:610px;
+	/* 	border:1px solid #000; */
+	position:relative;
+}
+li.phone3,li.phone4,li.phone5,li.phone6,li.phone7,li.phone8,li.phone9,li.phone10{
+	width:303px;height:375px;
+	/* border:1px solid #000; */
+	position:relative;
+}
+/* li下的第一排大图的两个div是一个class */
+div.section_box_adv1{
+	width:615px;height:610px;
+	color:#515151;
+	text-align:center;
+	/* border:1px solid #f00; */
+}
+/* a标签 */
+a.section_box_adv3_a{
+	text-decoration:none;
+}
+
+img.box_img1{
+	width:460px;height:460px;
+}
+/* 三个介绍文字 */
+div.good_detail{
+	margin-top:30px;
+}
+/* 1.商品名称介绍 */
+div.good_name1{
+	font-size:28px;
+	color:#333;
+	margin-bottom:3px;
+}
+/* 2.商品详情介绍 */
+div.good_desc1{
+	font-size:18px;
+	color:#333;
+	margin-bottom:3px;
+}
+/* 3.商品价格 */
+div.good_price1{
+	font-size:24px;
+	color:#c00;
+	margin-bottom:3px;
+}
+div.product_sign_red{
+	width:60px;height:60px;
+	background:linear-gradient(120deg,#ff3149,#ff64a6);
+	font-size:16px;
+	color:#fff;
+	position:absolute;
+	left:30px;top:30px;
+	text-align:center;
+	line-height:60px;
+	border-radius:50%;
+}
+/* li下的第二三排大图的八个div是一个class */
+div.section_box_adv2{
+	width:303px;height:375px;
+	color:#515151;
+	text-align:center;
+	/* border:1px solid #f00; */
+}
+/* 三个介绍文字 */
+img.box_img2{
+	width:230px;height:230px;
+	margin-top:30px;
+}
+/* 1.商品名称介绍 */
+div.good_name2{
+	font-size:16px;
+	color:#333;
+	margin-bottom:2px;
+}
+/* 2.商品详情介绍 */
+div.good_desc2{
+	font-size:14px;
+	color:#999;
+	margin-bottom:3px;
+}
+/* 3.商品价格 */
+div.good_price2{
+	font-size:22px;
+	color:#c00;
+	margin-bottom:3px;
+}
+/* 魅族声学下的背景图片 */
+#section_box_adv_voice{
+	background-image:url(../img/firstpage/firstpage1_4.jpg);
+}
+/* 设置魅族声学下的三行四列 */
+/* 设置ul列表为弹性布局 */
+ul.voicefix:before{
+	content:"";
+	clear:both;
+	display:table;
+}
+ul.voicefix{
+	display:flex;
+	width:1240px;height:1155px;
+	justify-content:space-around;
+	flex-flow:row wrap;
+}
+li.voice1{
+	width:303px;
+	height:375px;
+
+}
+
+img.voice_set_img1{
+	width:100%;
+	height:100%;
+}
