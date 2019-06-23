@@ -23,6 +23,11 @@ div.meizu_header_container{
 	position:absolute;
 	top:0px;
 }
+div.meizu_header{
+  width:1240px;
+  height:82px;
+  background:transparent;
+}
 div.meizu_header_transform{
 	width:1240px;
 	height:670px;
@@ -55,7 +60,7 @@ a.meizu_header_logo_img{
 	background-image:url("../img/firstpage/meizu.png");
 	background-repeat:no-repeat;
 	background-position:center center;
-	background-size:100% 100%; 	
+	background-size:100% 100%; 
 }
 /* 购物图标 */
 a.meizu_header_item_cart{
@@ -64,7 +69,10 @@ a.meizu_header_item_cart{
 	width:29px;
 	height:29px;
 	margin:27px 50px 0 8px;
- 	background-image:url("../img/firstpage/shopping-cart-white.png");
+  background-image:url("../img/firstpage/shopping-cart-white.png");
+  /*  background-image:url("../img/firstpage/shopping-cart-white1.png");
+   background-image:url('../img/firstpage/shopping-cart-gray_1.png'); */
+  
 	background-repeat:no-repeat;
 	background-position:center center;
 	background-size:100% 100%; 
@@ -194,14 +202,17 @@ div.meizu_header_sub_wrap{
 /* 手机的下拉菜单，现在是隐藏的 */
 ul.meizu_header_sub_wrap_ul_1{
 	width:1240px;
-	height:191px;
+	/* height:191px; */
 	display:flex;
 	justify-content:space-around;
 	align-items:center;
 	flex-wrap:nowarp;
-	text-align:center;
-	background:#fff;
-	/**/ display:none;
+  text-align:center;
+  background:#fff;
+  /* display:none;*/
+  height:0px;
+  transition:.5s;
+  overflow: hidden;
 }
 /*鼠标悬停在手机a标签上，出现下拉菜单 此处还有问题
 a.meizu_header_link_product_a:hover div.meizu_header_sub_wrap>ul{
@@ -211,7 +222,7 @@ div.meizu_header_sub_wrap>ul>li{
 	display:inline-block;
 	width:142px;height:140px;
 	padding:15px 5px 20px;
-
+  background:#fff;
 }
 div.meizu_header_sub_wrap>ul>li a{
 	display:block;
@@ -381,7 +392,7 @@ div.section_box_adv_2>a{
 } */
 
 /*ul手机列表，共10个，上面2个大一点，底下2排每排4个*/
-ul.clearfix{
+ul.clearfix_phone{
 	list-style:none;
 	width:1240px;height:1390px;
 	display:flex;/*设置弹性布局*/
@@ -390,7 +401,7 @@ ul.clearfix{
 	/* background:#fff; */
 	/* 	border:1px solid #f00; */
 }
-ul.clearfix>li{
+ul.clearfix_phone>li{
 	background:#fff;
 }
 li.big_big1{
@@ -484,27 +495,156 @@ div.good_price2{
 /* 魅族声学下的背景图片 */
 #section_box_adv_voice{
 	background-image:url(../img/firstpage/firstpage1_4.jpg);
+	display:block;
+	margin-bottom:8px;
 }
 /* 设置魅族声学下的三行四列 */
 /* 设置ul列表为弹性布局 */
-ul.voicefix:before{
+/* ul.voicefix:before{
 	content:"";
 	clear:both;
 	display:table;
-}
+} */
 ul.voicefix{
 	display:flex;
 	width:1240px;height:1155px;
-	justify-content:space-around;
+	justify-content:space-between;
 	flex-flow:row wrap;
 }
 li.voice1{
+	position:relative;
 	width:303px;
 	height:375px;
-
+	background:#fff;
+	text-align:center;
+	
 }
-
 img.voice_set_img1{
 	width:100%;
 	height:100%;
 }
+a{text-decoration:none;}
+/* 一个大的div包裹三排介绍文字 */
+div.index_voice_text1{
+	position:absolute;
+	bottom:50px;
+	left:0px;
+	text-align:center;
+	width:100%;
+}
+/* 第一排文字 */
+div.voice_name1{
+	font-size:21px;
+	color:#fff;
+	font-weight:700;
+	margin-bottom:6px;
+}
+div.voice_desc1{
+	color:#fff;
+	font-size:14px;
+	margin-bottom:5px;
+}
+div.voice_price1{
+	color:#6ad0c4;
+	font-size:24px;
+	font-weight:700;
+}
+img.voice_set_img2{
+	width:230px;
+	height:230px;
+	display:block;
+	position:absolute;
+	left:35px;
+	top:25px;
+}
+/* a.voice_set_a2{
+	display:block;
+	width:100%;
+	height:100%;
+	background:url(../img/firstpage/voice_list_1_2.png);
+	background-repeat:no-repeat;
+	background-position:center;
+} */
+/* 对三排字进行操纵 */
+div.index_voice_text2{
+	position:absolute;
+	bottom:50px;
+	left:0px;
+	text-align:center;
+	width:100%;
+}
+div.voice_name2{
+	font-size:16px;
+	color:#333;
+	margin-bottom:5px;
+}
+div.voice_desc2{
+	font-size:14px;
+	color:#999;
+	margin-bottom:5px;
+}
+div.voice_price2{
+	font-size:22px;
+	color:#c00;
+}
+div.voice_price2>span{
+	font-size:14px;
+	margin-left:8px;
+	color:#666;
+	text-decoration:line-through;
+}
+/* 两排四列社区热帖 */
+ul.clearfix{
+	display:flex;
+	justify-content:space-between;
+	width:1240px;
+	height:794px;
+	flex-flow:row wrap;
+	list-style:none;
+	
+}
+ul.clearfix>li{
+	width:303px;
+	height:388px;	
+}
+img.conment-img1{
+	width:303px;height:190px;
+}
+div.conment-user-img-wp{
+	height:42px;
+	line-height:42px;/*设置内容垂直居中*/
+	padding:0 15px;
+	margin-top:8px;
+	color:#515151;
+}
+/* 评论区用户头像 */
+div.conment-user-img-wp>img{
+	float:left;
+	display:block;
+	width:36px;height:36px;
+	border-radius:50%;
+	border:1px solid #fff;
+	box-shadow:1px 1px 1px 1px #eee;
+	color:#515151;
+}
+div.conment-user-img-wp>span{
+	float:left;
+	margin-left:15px;
+}
+.clearfix p{
+	padding:10px 15px;
+	font-size:16px;
+	line-height:27px;
+	height:66px;
+	overflow:hidden;
+	color:#515151;
+}
+div.comment-tip{
+	text-align:left;
+	padding:10px 15px;
+	margin-top:10px;
+	color:#999;
+	font-size:14px;
+}
+
+
