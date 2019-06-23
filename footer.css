@@ -1,0 +1,134 @@
+div.meizu_footer{
+	position:relative;
+	font-size:14px;
+	color:#515151;
+	background:#fff;
+}
+div.meizu_footer_link{
+	width:1240px;height:301px;
+	padding:48px 0 20px;
+	border-top:1px solid #f1f1f1;
+}
+ul.meizu_footer_service{
+	width:800px;
+	height:70px;
+	float:left;
+	/*display:flex; */
+	list-style:none;
+	text-align:center;
+	padding-left:0px;
+	margin-right:10px;
+	margin-bottom:30px;
+	
+}
+a{text-decoration:none;}
+ul.meizu_footer_service>li{
+	float:left;
+	width:120px;
+	height:70px;
+	text-align:center;
+	margin:10px 6px;
+
+}
+ul.meizu_footer_service img{
+	display:block;
+	width:50px;
+	height:39px;
+	margin:0 auto;
+}
+ul.meizu_footer_service span{
+	display:block;
+	font-size:12px;
+	color:#999;
+	margin:0 auto;
+}
+div.onlive-server{
+	float:right;
+	/* clear:both; */
+	margin-bottom:0px;
+	/**/ text-align:right; 
+	margin-left:0px;
+}
+div.onlive-server span{
+	color:#999;
+	font-size:12px;
+}
+p.tel{
+	font-size:25px;
+	line-height:40px;
+	margin:0px;
+}
+a.onlive-btn{
+	display:block;
+	width:88px;
+	height:30px;
+	line-height:30px;
+	padding:0px 2px;
+	color:#fff;
+	background:#00c3f5;
+	border-radius:20px;
+	text-align:center;
+	margin-left:78px;
+}
+ul.clearFix_footer_list{
+	clear:both;
+	/* text-align:left; */
+}
+ul.clearFix_footer_list>li{/*在li中设置文字颜色，内部的a标签无效*/
+	list-style:none;
+	float:left;
+	border-right:1px solid #999;
+	padding-right:15px;
+	margin-right:15px;
+}
+ul.clearFix_footer_list>li>a{
+	color:#999;
+	font-size:12px;
+}
+a{text-decoration:none;}
+div.meizu_footer_certificate{
+	clear:both;
+	color:#999;
+	font-size:12px;
+	margin:8px;
+}
+div.meizu_footer_certificate>a{
+	color:#999;
+	font-size:12px;
+}
+
+div.meizu_footer_subscribe{
+	clear:both;
+	float:right;
+	width:160px;
+	height:28px;
+	
+}
+div.meizu_footer_subscribe>a{
+	display:inline-block;
+	width:21px;height:18px;
+
+}
+div.meizu_footer_subscribe img{
+	width:100%;
+}
+span.li-hr{
+	display:inline-block;
+	width:1px;
+	height:14px;
+	color:#eee;
+	padding:0 8px;
+}
+/* 隐藏大图 */
+div.footer_big1{
+	position:absolute;
+	width:180px;
+	height:180px;
+	bottom:160px;
+	right:-224px;
+	display:none;
+}
+div.footer_big1>img{
+	width:100%;
+}
+
