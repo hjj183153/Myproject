@@ -8,34 +8,8 @@
 	顶端文字分为三个部分：①meizu图标 ②导航栏9个a标签 ③一个input标签，一个用户图标，一个购物车图标*/
 		</style>
 		<link rel="stylesheet" href="css/firstpage.css">
-		<script type="text/javascript">
-			function mouseOver(){
-				document.getElementById("unlogin_ul").style.display="block";
-				document.getElementById("meizu_header_user_box").style.display="block";
-			}
-			function mouseOut(){
-				document.getElementById("unlogin_ul").style.display="none";
-				document.getElementById("meizu_header_user_box").style.display="none";
-			}
-			//导航栏手机的下拉菜单
-			function meizu_header_link_phone(){
-				document.getElementById("meizu_header_sub_wrap_ul_1").style.display="block";
-			}
-			//隐藏ul还有一些问题
-			function meizu_header_sub_wrap1(){
-				document.getElementById("meizu_header_sub_wrap_ul_1").style.display="none";
-			}
-			//声学下拉菜单
-			function meizu_header_link_voice(){
-				document.getElementById("meizu_header_sub_wrap_ul_2").style.display="block";
-			}
-			function meizu_header_sub_wrap_voice(){
-				document.getElementById("meizu_header_sub_wrap_ul_2").style.display="none";
-				document.getElementById("meizu_header_sub_wrap_ul_1").style.display="none";
-			}
-		</script>	
 	 </head>
-	 <body><!-- -->
+	 <body>
 		<!--1F 整个头部，包括背景图片 根据轮播图的不同，改变导航栏的颜色，分为white和gray两种 -->
 		<div class="container_theme_white">
 			<!--下面是轮播图图片，移到导航栏的后面，有一个div包着很多个div，这很多个div里面都是图片 -->
@@ -63,7 +37,7 @@
 						<!-- 右浮动 用户图标 -->
 						<div class="meizu_header_item_user" id="meizu_header_user">
 							<div class="meizu_header_user_img">
-								<img src="img/firstpage/icon-default-user_white.png" alt="" onmouseover="mouseOver()">
+								<img src="img/firstpage/icon-default-user_white.png" alt="">
 							</div>
 							<!-- 用户图标的下拉框 在用户尚未登录和登录之后下拉菜单显示不一样-->
 							<!-- 设置下拉菜单的上面的三角形，白底的 -->
@@ -71,7 +45,7 @@
 							<!-- 已登录 -->
 							<div class="meizu_header_user_trigger" id="unlogin"  >
 								<!-- <div class="meizu_header_user_box" id="meizu_header_user_box" ></div> -->
-								<ul class="meizu_header_user_dropdown" id="unlogin_ul" onmouseout="mouseOut()">
+								<ul class="meizu_header_user_dropdown" id="unlogin_ul">
 									<li><a href="#">立即登录</a></li>
 									<li><a href="#">立即注册</a></li>
 									<li><a href="#">我的订单</a></li>
@@ -98,16 +72,16 @@
 							<ul class="meizu_header_link" id="meizu_header_link">
 								<!-- a标签中调用meizu_header_link_phone()函数，鼠标悬停，出现下拉菜单 -->
 								<li id="meizu_header_link_product_hd1" class="meizu_header_link_product">
-									<a href="#" class="meizu_header_link_product_a" onmouseover="meizu_header_link_phone()">手机</a>
+									<a href="#" class="meizu_header_link_product_a" data-toggle="phone">手机</a>
 								</li>
 								<li id="meizu_header_link_product_hd2" class="meizu_header_link_product">
-									<a href="#" class="meizu_header_link_product_a" onmouseover="meizu_header_link_voice()">声学</a>
+									<a href="#" class="meizu_header_link_product_a" data-toggle="phone">声学</a>
 								</li>
 								<li id="meizu_header_link_product_hd3" class="meizu_header_link_product">
-									<a href="#" class="meizu_header_link_product_a">配件</a>
+									<a href="#" class="meizu_header_link_product_a" data-toggle="phone">配件</a>
 								</li>
 								<li id="meizu_header_link_product_hd4" class="meizu_header_link_product">
-									<a href="#" class="meizu_header_link_product_a">生活</a>
+									<a href="#" class="meizu_header_link_product_a" data-toggle="phone">生活</a>
 								</li>
 								<li>
 									<a href="#">Flyme</a>
@@ -132,7 +106,7 @@
 				<div id="meizu_header_sub_hd1" class="meizu_header_sub">
 					<!--1手机导航栏的下拉菜单-->
 					<div class="meizu_header_sub_wrap">
-						<ul class="meizu_header_sub_wrap_ul_1" id="meizu_header_sub_wrap_ul_1" onmouseout="meizu_header_sub_wrap1()" >
+						<ul class="meizu_header_sub_wrap_ul_1" id="meizu_header_sub_wrap_ul_1"  >
 							<li>
 								<a href="#" class="meizu_header_link_product_sub_1">
 									<div>
@@ -196,20 +170,13 @@
 									<p>￥3198</p>
 								</a>
 							</li>
-							<!-- <li>
-								<a href="#" class="meizu_header_link_product_sub_1">
-									<div></div>
-									<p>魅族 16th</p>
-									<p>￥2298</p>
-								</a>
-							</li> -->
 						</ul>
 					</div>	
 				</div>
 				<div id="meizu_header_sub_hd2" class="meizu_header_sub">
 					<!--2声学导航栏的下拉菜单-->
 					<div class="meizu_header_sub_wrap">
-						<ul class="meizu_header_sub_wrap_ul_2" id="meizu_header_sub_wrap_ul_2" onmouseout="meizu_header_sub_wrap_voice()">
+						<ul class="meizu_header_sub_wrap_ul_2" id="meizu_header_sub_wrap_ul_2" >
 							<li>
 								<a href="#" class="meizu_header_link_product_sub_1">
 									<div id="meizu_header_link_product_voice_1">
@@ -352,7 +319,7 @@
 				<div class="section_box_row">
 				<!--  3.1首先用一个div内部用ul列表进行布局-->
 					<div class="index_center">
-						<ul class="clearfix">
+						<ul class="clearfix_phone">
 							<li class="big_big1">
 								<!-- 					列表中用div包着整个a标签，div>a>img+p+p+p		 -->
 								<div class="section_box_adv1">
@@ -506,7 +473,8 @@
 							<div class="index_voice_li1">
 								<a href="">
 									<img src="img/firstpage/voice_list1.jpg" alt="" class="voice_set_img1">
-									<div>
+									<!--第一排第一列 -->
+									<div class="index_voice_text1">
 										<div class="voice_name1">魅族 POP2 真无线蓝牙耳机</div>
 										<div class="voice_desc1">蓝牙5.0 超长续航</div>
 										<div class="voice_price1">￥399</div>
@@ -515,13 +483,37 @@
 							</div>
 						</li>
 						<li class="voice1">
-							<div class="index_voice_li1">
-								<a href="">
-									<img src="img/firstpage/voice_list1.jpg" alt="" class="voice_set_img1">
-									<div>
-										<div class="voice_name1">魅族 POP2 真无线蓝牙耳机</div>
-										<div class="voice_desc1">蓝牙5.0 超长续航</div>
-										<div class="voice_price1">￥399</div>
+							<div class="index_voice_li2">
+								<a href="" class="voice_set_a2">
+									<img src="img/firstpage/voice_list_1_2.png" alt="" class="voice_set_img2">
+									<div class="index_voice_text2">
+										<div class="voice_name2">魅族 POP2 真无线蓝牙耳机</div>
+										<div class="voice_desc2">蓝牙5.0 超长续航</div>
+										<div class="voice_price2">￥199<span>￥299</span></div>
+									</div>
+								</a>
+							</div>
+						</li>
+						<li class="voice1">
+							<div class="index_voice_li2">
+								<a href="" class="voice_set_a2">
+									<img src="img/firstpage/voice_list_1_2.png" alt="" class="voice_set_img2">
+									<div class="index_voice_text2">
+										<div class="voice_name2">魅族 POP2 真无线蓝牙耳机</div>
+										<div class="voice_desc2">蓝牙5.0 超长续航</div>
+										<div class="voice_price2">￥199<span>￥299</span></div>
+									</div>
+								</a>
+							</div>
+						</li>
+						<li class="voice1">
+							<div class="index_voice_li2">
+								<a href="" class="voice_set_a2">
+									<img src="img/firstpage/voice_list_1_2.png" alt="" class="voice_set_img2">
+									<div class="index_voice_text2">
+										<div class="voice_name2">魅族 POP2 真无线蓝牙耳机</div>
+										<div class="voice_desc2">蓝牙5.0 超长续航</div>
+										<div class="voice_price2">￥199<span>￥299</span></div>
 									</div>
 								</a>
 							</div>
@@ -530,7 +522,8 @@
 							<div class="index_voice_li1">
 								<a href="">
 									<img src="img/firstpage/voice_list1.jpg" alt="" class="voice_set_img1">
-									<div>
+									<!--第二排第一列 -->
+									<div class="index_voice_text1">
 										<div class="voice_name1">魅族 POP2 真无线蓝牙耳机</div>
 										<div class="voice_desc1">蓝牙5.0 超长续航</div>
 										<div class="voice_price1">￥399</div>
@@ -539,13 +532,37 @@
 							</div>
 						</li>
 						<li class="voice1">
-							<div class="index_voice_li1">
-								<a href="">
-									<img src="img/firstpage/voice_list1.jpg" alt="" class="voice_set_img1">
-									<div>
-										<div class="voice_name1">魅族 POP2 真无线蓝牙耳机</div>
-										<div class="voice_desc1">蓝牙5.0 超长续航</div>
-										<div class="voice_price1">￥399</div>
+							<div class="index_voice_li2">
+								<a href="" class="voice_set_a2">
+									<img src="img/firstpage/voice_list_1_2.png" alt="" class="voice_set_img2">
+									<div class="index_voice_text2">
+										<div class="voice_name2">魅族 POP2 真无线蓝牙耳机</div>
+										<div class="voice_desc2">蓝牙5.0 超长续航</div>
+										<div class="voice_price2">￥199<span>￥299</span></div>
+									</div>
+								</a>
+							</div>
+						</li>
+						<li class="voice1">
+							<div class="index_voice_li2">
+								<a href="" class="voice_set_a2">
+									<img src="img/firstpage/voice_list_1_2.png" alt="" class="voice_set_img2">
+									<div class="index_voice_text2">
+										<div class="voice_name2">魅族 POP2 真无线蓝牙耳机</div>
+										<div class="voice_desc2">蓝牙5.0 超长续航</div>
+										<div class="voice_price2">￥199<span>￥299</span></div>
+									</div>
+								</a>
+							</div>
+						</li>
+						<li class="voice1">
+							<div class="index_voice_li2">
+								<a href="" class="voice_set_a2">
+									<img src="img/firstpage/voice_list_1_2.png" alt="" class="voice_set_img2">
+									<div class="index_voice_text2">
+										<div class="voice_name2">魅族 POP2 真无线蓝牙耳机</div>
+										<div class="voice_desc2">蓝牙5.0 超长续航</div>
+										<div class="voice_price2">￥199<span>￥299</span></div>
 									</div>
 								</a>
 							</div>
@@ -554,7 +571,8 @@
 							<div class="index_voice_li1">
 								<a href="">
 									<img src="img/firstpage/voice_list1.jpg" alt="" class="voice_set_img1">
-									<div>
+									<!--第三排第一列 -->
+									<div class="index_voice_text1">
 										<div class="voice_name1">魅族 POP2 真无线蓝牙耳机</div>
 										<div class="voice_desc1">蓝牙5.0 超长续航</div>
 										<div class="voice_price1">￥399</div>
@@ -563,85 +581,37 @@
 							</div>
 						</li>
 						<li class="voice1">
-							<div class="index_voice_li1">
-								<a href="">
-									<img src="img/firstpage/voice_list1.jpg" alt="" class="voice_set_img1">
-									<div>
-										<div class="voice_name1">魅族 POP2 真无线蓝牙耳机</div>
-										<div class="voice_desc1">蓝牙5.0 超长续航</div>
-										<div class="voice_price1">￥399</div>
+							<div class="index_voice_li2">
+								<a href="" class="voice_set_a2">
+									<img src="img/firstpage/voice_list_1_2.png" alt="" class="voice_set_img2">
+									<div class="index_voice_text2">
+										<div class="voice_name2">魅族 POP2 真无线蓝牙耳机</div>
+										<div class="voice_desc2">蓝牙5.0 超长续航</div>
+										<div class="voice_price2">￥199<span>￥299</span></div>
 									</div>
 								</a>
 							</div>
 						</li>
 						<li class="voice1">
-							<div class="index_voice_li1">
-								<a href="">
-									<img src="img/firstpage/voice_list1.jpg" alt="" class="voice_set_img1">
-									<div>
-										<div class="voice_name1">魅族 POP2 真无线蓝牙耳机</div>
-										<div class="voice_desc1">蓝牙5.0 超长续航</div>
-										<div class="voice_price1">￥399</div>
+							<div class="index_voice_li2">
+								<a href="" class="voice_set_a2">
+									<img src="img/firstpage/voice_list_1_2.png" alt="" class="voice_set_img2">
+									<div class="index_voice_text2">
+										<div class="voice_name2">魅族 POP2 真无线蓝牙耳机</div>
+										<div class="voice_desc2">蓝牙5.0 超长续航</div>
+										<div class="voice_price2">￥199<span>￥299</span></div>
 									</div>
 								</a>
 							</div>
 						</li>
 						<li class="voice1">
-							<div class="index_voice_li1">
-								<a href="">
-									<img src="img/firstpage/voice_list1.jpg" alt="" class="voice_set_img1">
-									<div>
-										<div class="voice_name1">魅族 POP2 真无线蓝牙耳机</div>
-										<div class="voice_desc1">蓝牙5.0 超长续航</div>
-										<div class="voice_price1">￥399</div>
-									</div>
-								</a>
-							</div>
-						</li>
-						<li class="voice1">
-							<div class="index_voice_li1">
-								<a href="">
-									<img src="img/firstpage/voice_list1.jpg" alt="" class="voice_set_img1">
-									<div>
-										<div class="voice_name1">魅族 POP2 真无线蓝牙耳机</div>
-										<div class="voice_desc1">蓝牙5.0 超长续航</div>
-										<div class="voice_price1">￥399</div>
-									</div>
-								</a>
-							</div>
-						</li>
-						<li class="voice1">
-							<div class="index_voice_li1">
-								<a href="">
-									<img src="img/firstpage/voice_list1.jpg" alt="" class="voice_set_img1">
-									<div>
-										<div class="voice_name1">魅族 POP2 真无线蓝牙耳机</div>
-										<div class="voice_desc1">蓝牙5.0 超长续航</div>
-										<div class="voice_price1">￥399</div>
-									</div>
-								</a>
-							</div>
-						</li>
-						<li class="voice1">
-							<div class="index_voice_li1">
-								<a href="">
-									<img src="img/firstpage/voice_list1.jpg" alt="" class="voice_set_img1">
-									<div>
-										<div class="voice_name1">魅族 POP2 真无线蓝牙耳机</div>
-										<div class="voice_desc1">蓝牙5.0 超长续航</div>
-										<div class="voice_price1">￥399</div>
-									</div>
-								</a>
-							</div>
-						</li>
-						<li class="voice1">
-							<div class="index_voice_li1">
-								<a href="">
-									<img src="img/firstpage/voice_list1.jpg" alt="" class="voice_set_img1">
-									<div>
-										<div class="voice_name1">魅族 POP2 真无线蓝牙耳机</div>
-										<div class="voice_desc1">蓝牙5.0 超长续航</div>
-										<div class="voice_price1">￥399</div>
+							<div class="index_voice_li2">
+								<a href="" class="voice_set_a2">
+									<img src="img/firstpage/voice_list_1_2.png" alt="" class="voice_set_img2">
+									<div class="index_voice_text2">
+										<div class="voice_name2">魅族 POP2 真无线蓝牙耳机</div>
+										<div class="voice_desc2">蓝牙5.0 超长续航</div>
+										<div class="voice_price2">￥199<span>￥299</span></div>
 									</div>
 								</a>
 							</div>
@@ -649,5 +619,135 @@
 					</ul>
 				</div>
 			</div>
+			<!--5F 社会热帖模块 -->
+			<div class="index-comment-center" id="index-comment-center" >
+				<div class="section-comment-box">
+					<div class="section_title" id="section_title_phone">
+						<h3>社区热帖</h3>
+					</div>
+					<div class="section-box-row">
+						<div class="index-center-wrapper">
+							<ul class="clearfix">
+								<li>
+									<div>
+										<a href="#">
+											<div class="conment-img-wp">
+												<img src="img/firstpage/social-hot1.jpg" alt="" class="conment-img1">
+											</div>
+											<div class="conment-user-img-wp">
+												<img src="img/firstpage/social-hot1_user_icon1.jpg" alt=""><span>用户2240504</span>
+											</div>
+											<p >摄影离不开适当的后期，好在如今你可以在魅族手机上轻松完成操作。</p>
+											<div class="comment-tip">摄影技巧</div>
+										</a>
+									</div>
+								</li>
+								<!-- 八个li -->
+								<li>
+									<div>
+										<a href="#">
+											<div class="conment-img-wp">
+												<img src="img/firstpage/social-hot2.jpg" alt="" class="conment-img1">
+											</div>
+											<div class="conment-user-img-wp">
+												<img src="img/firstpage/social-hot1_user_icon1.jpg" alt=""><span>用户2240504</span>
+											</div>
+											<p >摄影离不开适当的后期，好在如今你可以在魅族手机上轻松完成操作。</p>
+											<div class="comment-tip">摄影技巧</div>
+										</a>
+									</div>
+								</li>
+								<li>
+									<div>
+										<a href="#">
+											<div class="conment-img-wp">
+												<img src="img/firstpage/social-hot3.jpg" alt="" class="conment-img1">
+											</div>
+											<div class="conment-user-img-wp">
+												<img src="img/firstpage/social-hot1_user_icon1.jpg" alt=""><span>用户2240504</span>
+											</div>
+											<p >摄影离不开适当的后期，好在如今你可以在魅族手机上轻松完成操作。</p>
+											<div class="comment-tip">摄影技巧</div>
+										</a>
+									</div>
+								</li>
+								<li>
+									<div>
+										<a href="#">
+											<div class="conment-img-wp">
+												<img src="img/firstpage/social-hot4.jpg" alt="" class="conment-img1">
+											</div>
+											<div class="conment-user-img-wp">
+												<img src="img/firstpage/social-hot1_user_icon1.jpg" alt=""><span>用户2240504</span>
+											</div>
+											<p >摄影离不开适当的后期，好在如今你可以在魅族手机上轻松完成操作。</p>
+											<div class="comment-tip">摄影技巧</div>
+										</a>
+									</div>
+								</li>
+								<li>
+									<div>
+										<a href="#">
+											<div class="conment-img-wp">
+												<img src="img/firstpage/social-hot5.jpg" alt="" class="conment-img1">
+											</div>
+											<div class="conment-user-img-wp">
+												<img src="img/firstpage/social-hot1_user_icon1.jpg" alt=""><span>用户2240504</span>
+											</div>
+											<p >摄影离不开适当的后期，好在如今你可以在魅族手机上轻松完成操作。</p>
+											<div class="comment-tip">摄影技巧</div>
+										</a>
+									</div>
+								</li>
+								<li>
+									<div>
+										<a href="#">
+											<div class="conment-img-wp">
+												<img src="img/firstpage/social-hot6.jpg" alt="" class="conment-img1">
+											</div>
+											<div class="conment-user-img-wp">
+												<img src="img/firstpage/social-hot1_user_icon1.jpg" alt=""><span>用户2240504</span>
+											</div>
+											<p >摄影离不开适当的后期，好在如今你可以在魅族手机上轻松完成操作。</p>
+											<div class="comment-tip">摄影技巧</div>
+										</a>
+									</div>
+								</li>
+								<li>
+									<div>
+										<a href="#">
+											<div class="conment-img-wp">
+												<img src="img/firstpage/social-hot7.jpg" alt="" class="conment-img1">
+											</div>
+											<div class="conment-user-img-wp">
+												<img src="img/firstpage/social-hot1_user_icon1.jpg" alt=""><span>用户2240504</span>
+											</div>
+											<p >摄影离不开适当的后期，好在如今你可以在魅族手机上轻松完成操作。</p>
+											<div class="comment-tip">摄影技巧</div>
+										</a>
+									</div>
+								</li>
+								<li>
+									<div>
+										<a href="#">
+											<div class="conment-img-wp">
+												<img src="img/firstpage/social-hot8.jpg" alt="" class="conment-img1">
+											</div>
+											<div class="conment-user-img-wp">
+												<img src="img/firstpage/social-hot1_user_icon1.jpg" alt=""><span>用户2240504</span>
+											</div>
+											<p >摄影离不开适当的后期，好在如今你可以在魅族手机上轻松完成操作。</p>
+											<div class="comment-tip">摄影技巧</div>
+										</a>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+      </div>
+      <script src="js/jquery-1.11.3.js"></script>
+      <script src="js/firstpage.js"></script>	
+      
 	 </body>
 	</html>
