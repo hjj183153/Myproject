@@ -1,0 +1,314 @@
+*{padding:0;margin:0;}
+body{
+	/* min-width:1024px; */
+	font:14px/1.5;
+	color:#515151;
+	background:#f5f5f5;
+}
+a{
+	text-decoration:none;
+}
+ul,li{
+	list-style:none;
+}
+div.container_theme_white{
+	width:1240px;
+	height:670px;
+	/* border:1px solid #f00; */
+	margin:0 auto;
+}
+div.meizu_header_container{
+	margin:0 auto;
+	width:1240px;height:670px;
+	position:absolute;
+	top:0px;
+}
+/* 这是上面一排导航栏 */
+div.meizu_header{
+  width:1240px;
+  height:82px;
+  background:#fff;
+  margin:0 auto;
+  position:relative;
+	font-size:14px;
+}
+div.meizu_header_transform{
+	width:1240px;
+	height:670px;
+	text-align:center;
+}
+/* .meizu_header>div.meizu_header_wrap_1240{
+	position:relative;
+	margin:0 auto;
+} */
+div.meizu_header_wrap_1240>div.meizu_header_logo{
+	float:left;
+	margin-left:50px;
+	padding:28px 0;
+}
+a.meizu_header_logo_img{
+	display:block;
+	width:125px;
+	height:24px;
+	background-image:url("../img/firstpage/meizu.png");
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:100% 100%; 
+}
+/* 购物图标 */
+a.meizu_header_item_cart{
+	float:right;
+	display:block;
+	width:29px;
+	height:29px;
+	margin:27px 50px 0 8px;
+  background-image:url("../img/firstpage/shopping-cart-gray_2.png");
+  /*  background-image:url("../img/firstpage/shopping-cart-white1.png");
+   background-image:url('../img/firstpage/shopping-cart-gray_1.png'); */
+  
+	background-repeat:no-repeat;
+	background-position:center center;
+	background-size:100% 100%; 
+	position:relative;
+}
+.meizu_header_item_cart>em{
+	font-style:normal;
+	position:absolute;
+	right:-3px;
+	top:-2px;
+	display:inline-block;
+	width:15px;height:15px;
+	background:#c00;
+	border-radius:50%;
+	text-align:center;
+	line-height:15px;
+	color:#fff;
+	padding:0 1px;
+}
+div.meizu_header_item_user{
+	position:relative;
+}
+div.meizu_header_user_img{
+	float:right;
+	width:29px;height:29px;
+	margin-top:27px;
+	margin-right:15px;
+}
+.meizu_header_user_img img{
+	width:29px;height:29px;
+	cursor:pointer;
+}
+/* 这就是下拉菜单上面的小三角形 */
+div.meizu_header_user_box{
+	width:0px;
+	border:8px solid #fff;
+	border-top-color:transparent;
+	border-right-color:transparent;
+	border-left-color:transparent;
+	float:right;
+	margin-top:48px;
+	margin-right:-22px;
+	display:none;
+}
+div.meizu_header_user_trigger{
+	
+}
+/* .meizu_header_user_img>img:hover+#unlogin{
+	display:block;
+}*/
+div.meizu_header_item_search{
+	position:relative;
+	float:right;
+	margin:26px 30px 0 10px;
+	width:170px;height:30px;
+	background:#fff;
+	border-radius:20px;
+	text-align:center;
+  line-height:30px;
+  border:1px solid rgba(0,0,0,.15);
+}
+div.meizu_header_item_search>input{
+	display:block;
+	width:127px;height:20px;
+	margin:5px 0 0 15px;
+	background:transparent;
+	border:0;
+	/* 设置获取焦点后外边框没有蓝色的线，默认是有一圈蓝色的线 */
+	outline:0;
+  font-size:12px;
+  color:#999;
+}
+/* 搜索小图标 */
+a.meizu_header_icon_search{
+	position:absolute;
+	top:0px;right:0px;
+	display:block;
+	width:23px;height:23px;
+	background-image:url("../img/firstpage/search.png");
+	background-repeat:no-repeat;
+	background-size:100% 100%;
+	margin:3px 5px 0 14px;
+}
+/* 包着ul的div */
+div.meizu_header_link_div{
+	float:right;
+	margin-right:18px;
+	
+}
+ul.meizu_header_link{
+	/* width:484.14px;height:82px; */
+}
+ ul.meizu_header_link>li.meizu_header_link_product{
+  float:left;
+  margin:0 20px 0 15px;
+  height:82px;
+  line-height:82px;
+  z-index:999;
+}
+ul.meizu_header_link a{
+  color:#333;
+}
+/*设置下拉菜单初始位置隐藏*/
+.meizu_header_sub_wrap .active{
+  height:0px;
+  opacity: 0;
+  overflow:hidden;
+}
+/*手机导航栏的下拉菜单*/
+ul.meizu_header_sub_wrap_ul_1{
+  position: absolute;
+  top:81px;
+  left:0px;
+  /* display:block;
+  opacity: 1; */
+  font-size:12px;
+  width:1240px;
+  /* height:165px; */
+  text-align: center;
+  margin:0 auto;
+  background:#fff;
+}
+ul.meizu_header_sub_wrap_ul_1>li{
+  float:left;
+  width:142px;
+  height:140px;
+  line-height:16px;
+  margin: 13px 6.1px 13px 6.1px;
+  
+}
+a.meizu_header_link_product_sub_1 p{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color:#333;
+  margin:2px 0 3px;
+}
+/* 做出hover鼠标悬浮，显示下拉菜单 */
+a.meizu_header_link_product_a:hover+div.meizu_header_sub .meizu_header_sub_wrap_ul_1{
+  /* display:block; */
+  opacity: 1;
+  transform:all 3s linear; 
+  overflow: hidden;
+  /* */ height:165px;
+}
+
+/*设置下载的下拉菜单*/
+div.app_download{
+  /* clear:both; */
+}
+div.download_back_img{
+  position: relative;/*以便后面里面的小图标android下载以它为基准相对位移*/
+  width:1240px;
+  height:300px;
+  margin:0 auto;
+}
+div.download_back_img>img{
+  width:100%;
+  height:100%;
+}
+div.meizu_header_wrap_1240::after{
+  content:"";
+  display:table;
+}
+/*内部安卓下载两个小图标*/
+div.download_back_img>a:nth-child(2){
+  position: absolute;
+  display:block;
+  width:125px;
+  height:28px;
+  top:207px;
+  left:375px;
+}
+div.download_back_img>:last-child{
+  position: absolute;
+  display:block;
+  width:125px;
+  height:28px;
+  top:207px;
+  right:117px;
+}
+div.download_back_img>a>img{
+  width:125px;
+}
+/*设置下载的下拉菜单初始值是隐藏*/
+.app_download .active{
+  display:none; 
+  /* opacity:0;*/
+  overflow:hidden;
+}
+/* 用户下拉菜单 */
+/* 这就是下拉菜单上面的小三角形 */
+div.meizu_header_user_box{
+  width:100px;
+  height: 100px;
+	border:8px solid #000;
+	border-top-color:transparent;
+	border-right-color:transparent;
+	border-left-color:transparent;
+	float:right;
+	margin-top:48px;
+  margin-right:-22px;
+ 
+	/* display:none; */
+}
+div.user_dropdown_total{
+  clear:both;
+  position: absolute;
+  top:200px;
+  left:0px;
+}
+div.meizu_header_user_trigger{
+  width:98px;
+  height:130px;
+  clear:both;
+}
+/* 下拉菜单的ul */
+/* 未登录 */
+ul.meizu_header_user_dropdown{
+	width:98px;
+	position:absolute;
+	top:-130px;
+	left:1074px;
+	border-radius:2px;
+	background:#fff;
+	text-align:center;
+  line-height:32.5px;
+  border: 1px solid #efefef;
+  /* */display:none; 
+  height:130px; 
+  /* height:0;*/
+}
+/* div.meizu_header_user_img:hover+.user_dropdown_total ul.meizu_header_user_dropdown{
+  display:block;
+} 
+div.meizu_header_item_user:hover>.user_dropdown_total ul.meizu_header_user_dropdown{
+  display:block;
+} */
+ul.meizu_header_user_dropdown>a{
+  color:#000;
+
+}
+.meizu_header_wrap_1240::after{
+  content:"";
+  display:table;
+}
