@@ -1,0 +1,279 @@
+/* 分类为手机的标题 */
+*{padding:0;margin:0;}
+a{text-decoration: none;}
+dd,dl,dt,h1,h2,h3,h4,h5,h6,ol,p,ul,li{
+  list-style:none;
+  font-weight:400;
+}
+body{
+  color:#515151;
+  background:#f5f5f5;
+  width:1240px;
+  margin:0 auto;
+}
+/*设置头的大背景图*/
+div.phone_link_header>a{
+  display:block;
+  /* width:1024px; 不能设置宽，设宽之后图片宽度就不够 */
+  height:450px;
+  background-image:url("../img/phone_link/phone_link_header.jpg");
+  background-repeat: no-repeat;
+  background-position:50% 100%;
+}
+/*下方的手机推荐列表*/
+div.phone_container{
+  width:1240px;
+  height:30px;
+  margin:87px 0 25px 0;
+  
+}
+div.phone_container::after{
+  content:"";
+  clear:both;
+  display:table;
+}
+span.title_category{
+  /**/float:left;
+  font-size:30px;
+  line-height:20px;
+  height:20px;
+  color:#515151;
+}
+div.filter_order{
+  width:180px;
+  height:20px;
+  float:right;
+  font-size:18px;
+  line-height:20px;
+  font-weight:200;
+}
+div.filter_order>a{
+  display:inline-block;
+  padding:2px 5px;
+}
+/* 价格导航右边的上下箭头 */
+div.filter_order>a.phone_price_top{
+  display:inline-block;
+  height:0;width:0;
+  border:5px solid transparent;
+  border-bottom-color:#000;
+  margin:0;padding:0;
+  position: absolute;
+  top:2px;
+  right:5px;
+}
+div.filter_order>a.phone_price_bottom{
+  display:inline-block;
+  border:5px solid transparent;
+  border-top-color:#000;
+  margin:0;padding:0;
+  position: absolute;
+  top:14px;
+  right:5px;
+}
+div.filter_order{
+  position: relative;
+  text-align: center;
+}
+/* 中间的ul li3列5排 */
+div.phone_list_wrap{
+  margin:0 auto;
+}
+ul.phone_list_wrap_ul{
+  display:flex;
+  width:1240px;
+  height:1700px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  
+}
+ul.phone_list_wrap_ul li{
+  width:403px;
+  height:556px;
+  background: #fff;
+  text-align:center;
+  position: relative;
+}
+img.phone_list_img_1{
+  width:320px;
+  height:320px;
+  display:block;
+  margin:20px auto 0;
+}
+/* 两个圆点 */
+/* 这个ul平时是隐藏的，只有鼠标进入a标签以内，当前手机li框内，才会显示 
+并且可以通过点击相应颜色的圆点，实现上面图片颜色的更换，且圆点有阴影效果
+*/
+li.phone_list_wrap_li:hover ul{
+  opacity: 1;
+} 
+ul.item_style_dot_ul{
+  display:inline-block;
+  text-align:center;
+  opacity: 0;
+}
+ul>li.item_style_dot{
+  width:26px;
+  height:26px;
+  border-radius:50%;
+  background:#000;
+  float:left;
+  margin:10px 13px;
+}
+ul.item_style_dot_ul :first-child{
+  background:blue;
+}
+ul.item_style_dot_ul :nth-child(2){
+  background:black;
+}
+ul.item_style_dot_ul :last-child{
+  background:#f5f5f5;
+}
+h3.item_title{
+  display:block;
+  color:#333;
+  font-size:23px;
+}
+p.item_desc{
+  display:inline-block;
+  overflow: hidden; /*自动隐藏文字*/
+  text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+  white-space: nowrap;/*强制不换行*/
+  width: 20em;/*不允许出现半汉字截断*/
+  color:#666;
+  font-size: 16px;
+  margin:10px auto;
+}
+p.item_price{
+  display:inline-block;
+  color:#c00;
+
+}
+p.item_price :first-child{
+  font-size:14px;
+  padding:0 3px;
+}
+p.item_price :nth-child(2){
+  font-size:16px;
+  padding-left:3px;
+}
+p.item_price :last-child{
+  font-size:28px;
+  padding-right:3px;
+}
+/*直降小图标*/
+p.item_hot_sale{
+  display:inline-block;
+  position: absolute;
+  top:20px;
+  left:20px;
+  width:60px;
+  height:60px;
+  background:linear-gradient(120deg,#ff3149,#ff64a6);
+  font-size:16px;
+  border-radius: 50%;
+  text-align:center;
+  line-height:60px;
+  color:#fff;
+}
+div.link-floor>a{
+  display:block;
+  width:1240px;
+  height:250px;
+  background-image:url(../img/phone_link/compare_phone.jpg);
+  background-position:center center;
+  background-repeat: no-repeat;
+  background-size:1240px 250px;
+}
+h2.mod_title{
+  color:#333;
+  font-size: 24px;
+  margin:90px auto 25px;
+}
+
+ul.recommend_list_flex{
+  width:24760;
+  height:429px;
+  display:flex;
+}
+/*下面是一个ul轮播*/
+/*视口*/
+div.flex_viewport{
+  overflow:hidden;
+  width:1238px;
+  height:429px;
+  background: #fff; 
+
+}
+ul.recommend_slider_wrap{
+  width:24760px;
+  height:729px;
+  
+}
+li.rs_item{
+  width:310px;
+  margin-right:0;
+  float:left;
+  display:block;
+}
+li>a.rs_item_wrap_a{
+  display: block;
+  padding:40px 0 44px 0;
+  color:#666;
+  text-align: center;
+}
+div.mod_desc{
+  margin-top:36px;
+}
+div.mod_desc>:first-child{
+  font-size:21px;
+  columns: #2b2b2b;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+div.mod_desc>:last-child{
+  margin-top:8px;
+}
+div.mod_desc>:last-child>:first-child{
+  font-size:16px;
+  color:#c00;
+}
+div.mod_desc>:last-child>:last-child{
+  font-size:27px;
+  color:#c00;
+}
+
+/*设置3个导航小圆点*/
+ul.flex_control_nav{
+  width:1024px;
+  height:13px;
+  margin:40px auto;
+  display:block;
+
+}
+/*设置小圆点水平居中*/
+ul.flex_control_nav>li{
+  float:left;
+  margin:0 4px;
+}
+ul.flex_control_nav>:first-child{
+  margin-left:480px;
+}
+ul.flex_control_nav>:last-child{
+  margin-right:480px;
+}
+/*小圆点的初始样式*/
+ul.flex_control_nav>li>a{
+  display:block;
+  width:10px;
+  height:10px;
+  border-radius: 50%;
+  border:1px solid #a1a1a1;
+  background:#fff;
+}
+/*小圆点被选中的样式*/
+ul.flex_control_nav .nav_active{
+  border:1px solid transparent;
+  background:#a1a1a1;
+}
